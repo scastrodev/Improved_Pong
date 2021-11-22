@@ -23,7 +23,7 @@ let ballInstance = (() => {
 
 			this.checkEdgeHit();
 		}
-e
+
 		checkEdgeHit() {
 			if (this.x + this.radius > width || this.x - this.radius < 0) this.xSpeed *= -1;
 			if (this.y + this.radius > height || this.y - this.radius < 0) this.ySpeed *= -1;
