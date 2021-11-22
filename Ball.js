@@ -1,43 +1,50 @@
 let ballInstance = (() => {
-  let instance;
+	let instance;
 
-  class Ball {
-    constructor() {
-      this.x = 400;
-      this.y = 225;
-      this.diameter = 25;
-      this.xSpeed = 6;
-      this.ySpeed = 6;
-      this.radius = this.diameter / 2;
-    }
+	class Ball {
+		constructor() {
+			this.x = 500;
+			this.y = 282;
+			this.diameter = 25;
+			this.xSpeed = 8;
+			this.ySpeed = 8;
+			this.radius = this.diameter / 2;
+		}
 
-    create() {
-      circle(this.x, this.y, this.diameter);
-      this.move();
-    }
+		create() {
+			circle(this.x, this.y, this.diameter);
 
-    move() {
-      this.x += this.xSpeed;
-      this.y += this.ySpeed;
-      this.checkEdgeHit();
-    }
+			this.move();
+		}
 
-    checkEdgeHit() {
-      if (this.x + this.radius > width || this.x - this.radius < 0) this.xSpeed *= -1;
+		move() {
+			this.x += this.xSpeed;
+			this.y += this.ySpeed;
 
-      if (this.y + this.radius > height || this.y - this.radius < 0) this.ySpeed *= -1;
-    }
-  }
-  
-  function createInstance() {
-    let ballSingleton = new Ball();
-    return ballSingleton;
-  }
-  
-  return {
-    getInstance: () => {
-      if (!instance) instance = createInstance();
-      return instance;
-    }
-  }
+			this.checkEdgeHit();
+		}
+e
+		checkEdgeHit() {
+			if (this.x + this.radius > width || this.x - this.radius < 0) this.xSpeed *= -1;
+			if (this.y + this.radius > height || this.y - this.radius < 0) this.ySpeed *= -1;
+		}
+
+		checkRacketHit(xRacket, yRacket, racketHeight, widthRacket) {
+			let hit = collideRectCircle(xRacket, yRacket, racketHeight, widthRacket, this.x, this.y, this.radius);
+
+			if (hit) this.xSpeed *= -1;
+		}
+	}
+
+	function createInstance() {
+		let ballSingleton = new Ball();
+		return ballSingleton;
+	}
+
+	return {
+		getInstance: () => {
+			if (!instance) instance = createInstance();
+			return instance;
+		}
+	}
 })();
