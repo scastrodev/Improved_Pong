@@ -3,8 +3,8 @@ let playerRacketInstance = (() => {
 
     class PlayerRacket {
 		constructor() {
-			this.x = 15;
-			this.y = 200;
+			this.x = 5;
+			this.y = 213;
 			this.height = 10;
 			this.width = 100;
 		}

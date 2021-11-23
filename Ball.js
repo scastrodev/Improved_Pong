@@ -4,7 +4,7 @@ let ballInstance = (() => {
 	class Ball {
 		constructor() {
 			this.x = 500;
-			this.y = 282;
+			this.y = 278;
 			this.diameter = 25;
 			this.xSpeed = 8;
 			this.ySpeed = 8;
@@ -13,13 +13,12 @@ let ballInstance = (() => {
 
 		create() {
 			circle(this.x, this.y, this.diameter);
-
 			this.move();
 		}
 
 		move() {
-			this.x += this.xSpeed;
-			this.y += this.ySpeed;
+			// this.x += this.xSpeed;
+			// this.y += this.ySpeed;
 
 			this.checkEdgeHit();
 		}

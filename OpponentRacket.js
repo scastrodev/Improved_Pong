@@ -3,8 +3,8 @@ let opponentRacketInstance = (() => {
 
     class OpponentRacket {
 		constructor() {
-			this.x = 975;
-			this.y = 200;
+			this.x = 985;
+			this.y = 257;
 			this.height = 10;
 			this.width = 100;
 			this.ySpeed;

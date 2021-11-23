@@ -13,8 +13,9 @@ let scoreboardInstance = (() => {
         }
 
         create() {
+            textFont(myFont);
             textAlign(CENTER);
-            fill(255);
+            textSize(30);
             text(this.playerScore, this.xPlayerScoreboard, this.yPlayerScoreboard);
             text(this.opponentScore, this.xOpponentScoreboard, this.yOpponentScoreboard);
         }
