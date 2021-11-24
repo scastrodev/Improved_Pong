@@ -26,7 +26,7 @@ let ballInstance = (() => {
 			if (this.y + this.radius > height || this.y - this.radius < 0) this.ySpeed *= -1;
 		}
 		checkRacketHit(xRacket, yRacket, racketHeight, widthRacket) {
-			let hit = collideRectCircle(xRacket, yRacket, racketHeight, widthRacket, this.x, this.y, this.radius + 10);
+			let hit = collideRectCircle(xRacket, yRacket, racketHeight, widthRacket + 2, this.x, this.y, this.radius + 10);
 			if (hit) this.xSpeed *= -1;
 		}
 	}
