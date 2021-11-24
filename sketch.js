@@ -1,6 +1,10 @@
 let myFont;
+let racketHit;
+let score;
 function preload() {
-	myFont = loadFont('static/linerama.ttf');
+	myFont = loadFont("static/linerama.ttf");
+	racketHit = loadSound("static/racketHit.mp3");
+	score = loadSound("static/score.mp3");
 }
 function setup() {
 	createCanvas(1000, 563);

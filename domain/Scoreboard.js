@@ -15,8 +15,13 @@ let scoreboardInstance = (() => {
             text(this.opponentScore, this.xOpponentScoreboard, this.yOpponentScoreboard);
         }
         madeScore(xBall) {
-            if (xBall < 12) this.playerScore += 1;
-            else if (xBall > 990) this.opponentScore += 1;
+            if (xBall < 12) {
+                this.playerScore += 1;
+                score.play();
+            } else if (xBall > 990) {
+                this.opponentScore += 1;  
+                score.play();
+            } 
         }
     }
 
