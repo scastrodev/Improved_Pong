@@ -1,12 +1,10 @@
 let myFont;
 function preload() {
-	myFont = loadFont('./linerama.ttf');
+	myFont = loadFont('static/linerama.ttf');
 }
-
 function setup() {
 	createCanvas(1000, 563);
 }
-
 function draw() {
 	let ball = ballInstance.getInstance();
 	let playerRacket = playerRacketInstance.getInstance();
@@ -19,16 +17,18 @@ function draw() {
 	ball.create();
 	playerRacket.create();
 	opponentRacket.create();
-	opponentRacket.move(ball.y);
+	opponentRacket.move(ball.y), 5000;
 	ball.checkRacketHit(playerRacket.x, playerRacket.y, playerRacket.height, playerRacket.width);
 	ball.checkRacketHit(opponentRacket.x, opponentRacket.y, opponentRacket.height, opponentRacket.width);
 	scoreboard.create();
 	scoreboard.madeScore(ball.x);
 	
 }
-
 function applyStyle() {
 	noFill();
 	stroke('#FFFFFF');
 	strokeWeight(1.5);	
+	textFont(myFont);
+	textAlign(CENTER);
+	textSize(30);
 }
