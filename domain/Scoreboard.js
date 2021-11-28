@@ -16,10 +16,10 @@ let scoreboardInstance = (() => {
         }
         madeScore(xBall) {
             if (xBall < 12) {
-                this.playerScore += 1;
+                this.opponentScore += 1;
                 score.play();
             } else if (xBall > 990) {
-                this.opponentScore += 1;  
+                this.playerScore += 1;  
                 score.play();
             } 
         }
